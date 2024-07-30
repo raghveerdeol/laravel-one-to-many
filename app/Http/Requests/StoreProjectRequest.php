@@ -22,13 +22,14 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'unique', 'max:40'],
+            'title' => ['required', 'max:40'],
             'language' => ['required', 'max:60'],
             'content' => ['required'],
             'started_on' => ['required', 'date'],
             'finished' => ['required', 'boolean'],
             'image_url' => ['required'],
             'website_url' => ['required'],
+            'type_id' => ['required', 'integer', 'exists:types,id']
         ];
 }
 }

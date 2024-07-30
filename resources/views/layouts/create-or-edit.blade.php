@@ -56,6 +56,18 @@
                         </div>
                         @enderror
 
+                        <label for="type_id" class="mt-1">Types: </label>
+                        <select class="form-select mb-2" name="type_id" aria-label="Types">
+                            @foreach ( $types as $type )
+                            <option value="{{ $type->id }}" {{ ($type->id == old('type_id', $project->type_id)) ? 'selected' : '' }}>{{ $type->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('type_id')
+                        <div class="alert alert-danger my-2">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
                         <label for="content">Content: </label>
                         <textarea class="form-control" type="text" placeholder="Content" aria-label="Content" name="content" id="content" rows="8">{{ old('content', $project->content) }}</textarea>
                         @error('content')
@@ -73,13 +85,13 @@
                         @enderror
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="finished" id="finished1" value="1">
+                            <input class="form-check-input" type="radio" name="finished" id="finished1" value="1" {{ (1 === old('finished', $project->finished)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="finished1">
                                 Finished
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="finished" id="finished2" value="0" checked>
+                            <input class="form-check-input" type="radio" name="finished" id="finished2" value="0" {{ (0 === old('finished', $project->finished)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="finished2">
                                 Not finished
                             </label>

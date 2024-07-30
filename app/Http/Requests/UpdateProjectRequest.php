@@ -30,6 +30,7 @@ class UpdateProjectRequest extends FormRequest
             'finished' => ['required', 'boolean'],
             'image_url' => ['required'],
             'website_url' => ['required'],
+            'type_id' => ['required', 'integer', 'exists:types,id'],
         ];
     }
 }
