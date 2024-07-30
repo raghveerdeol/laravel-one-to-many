@@ -11,6 +11,7 @@
                 <img src="{{ $project->image_url }}" class="card-img-top" alt="{{ $project->title }}">
                 <div class="card-body">
                     <h5 class="card-title"><strong>{{ $project->title }}</strong></h5>
+                    <h6 class="card-title d-inline-block px-3 rounded text-light" style="background: {{ $project->type->color }}"><em>{{ $project->type->name }}</em></h6>
                     <p class="card-text"><em>Language: {{ $project->language }} - started on: {{ $project->started_on }}</em></p>
                     <p class="card-text">{{ $project->content }}</p>
                     @if ($project->finished === 1)
@@ -27,7 +28,6 @@
                     </form>
                 </div>
             </div>
-            <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-xl">Show all Projects</a>
         </div>
     </div>
 </div>

@@ -10,7 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-
+                @if (Route::has('admin.projects.index'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                </li>
+                @endif
+                @if (Route::has('admin.projects.create'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.projects.create') }}">{{ __('Create project') }}</a>
+                </li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->

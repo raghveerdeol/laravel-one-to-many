@@ -7,7 +7,6 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <a href="{{ route('admin.projects.create') }}" class="btn btn-primary btn-l my-3">Add new project</a>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
