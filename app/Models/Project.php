@@ -20,4 +20,8 @@ class Project extends Model
     'image_url',
     'website_url'
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }

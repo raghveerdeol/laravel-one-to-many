@@ -12,6 +12,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Title</th>
                         <th scope="col">Language</th>
                         <th scope="col">Started on</th>
@@ -24,6 +25,7 @@
                     @foreach ($projects as $project)
                     <tr>
                         <th>{{ $project->id }}</th>
+                        <th>{{ $project->type->name }}</th>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->language }}</td>
                         <td>{{ $project->started_on }}</td>
