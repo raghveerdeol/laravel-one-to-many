@@ -20,6 +20,11 @@
                     <a class="nav-link" href="{{ route('admin.projects.create') }}">{{ __('Create project') }}</a>
                 </li>
                 @endif
+                @if (Route::has('admin.types.index'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.types.index') }}">{{ __('Types') }}</a>
+                </li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->

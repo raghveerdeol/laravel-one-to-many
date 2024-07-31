@@ -24,7 +24,7 @@
                     @foreach ($projects as $project)
                     <tr>
                         <th>{{ $project->id }}</th>
-                        <th>{{ $project->type->name }}</th>
+                        <th><span style="background: {{ $project->type->color }}"  class=" px-2 rounded text-light">{{ $project->type->name }}</span></th>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->language }}</td>
                         <td>{{ $project->started_on }}</td>
