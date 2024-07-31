@@ -23,7 +23,7 @@
                         <th>{{ $type->id }}</th>
                         <td>{{ $type->name }}</td>
                         <td>{{ $type->color }}</td>
-                        <td>{{ $type->id }}</td>
+                        <td>{{ count($type->projects) }}</td>
                         <td><a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary btn-sm">Show</a>
                             <a href="{{ route('admin.types.edit', $type) }}" class="btn btn-success btn-sm">Edit</a>
                             <form action="{{ route('admin.types.destroy', $type) }}" method="POST" class="d-inline-block form-deleter">
