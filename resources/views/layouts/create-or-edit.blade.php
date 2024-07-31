@@ -20,9 +20,7 @@
     </title>
 </head>
 <body>
-    <header>
-        @yield('header-content')
-    </header>
+    @include('admin.projects.partials.header')
 
     <main>
         <div class="container-fluid">

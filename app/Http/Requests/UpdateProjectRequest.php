@@ -23,13 +23,13 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', Rule::unique('projects')->ignore($this->route('project')), 'max:40'],
-            'language' => ['required', 'max:60'],
+            'title' => ['required', Rule::unique('projects')->ignore($this->route('project')), 'min:4', 'max:40'],
+            'language' => ['required', 'min:3', 'max:60'],
             'content' => ['required'],
             'started_on' => ['required', 'date'],
             'finished' => ['required', 'boolean'],
-            'image_url' => ['required'],
-            'website_url' => ['required'],
+            'image_url' => ['required', 'url'],
+            'website_url' => ['required', 'url'],
             'type_id' => ['required', 'integer', 'exists:types,id'],
         ];
     }
